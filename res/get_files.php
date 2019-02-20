@@ -14,7 +14,7 @@ function get_files($path) {
 
     return $jsonString;
   } else {
-    return "No such directory. Please contact the webmaster at" + adminEmail + ".";
+    return "No such directory. Please contact the webmaster at the email listed below.";
   }
 }
 
