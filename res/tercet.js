@@ -27,7 +27,7 @@ function buildMenu() {
     var obj = menu[i];
 
     if (i == 0) {
-      menuString = menuString + "<a class='clickable' href='?num=0'>Home</li>";
+      menuString = menuString + "<a class='clickable' href='" + rootUrl + "'>" + obj["name"] + "</li>";
     } else {
       menuString = menuString + "<a class='clickable' href='?page=" + obj["link"] + "'>" + obj["name"] + "</li>";
     }
