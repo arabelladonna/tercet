@@ -41,5 +41,6 @@ This has only been in development since February 18th, so it has a few issue.
 
 - Posts are in order of most recently updated, rather than most recently created. This is a Unix limitation and I am currently trying to come up with a user-friendly solution that doesn't involve writing an interface for writing posts.
 - You currently have to keep the /comments folder structure intact or it will break your blog.
+- The main menu can only be changed by modifying a JSON that is located in res/tercet.js. I am currently working on a more user-friendly solution.
 
 If you have any questions or run into problems, email me at matt@mattchuranu.xyz.
