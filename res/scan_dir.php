@@ -1,7 +1,7 @@
 <?php
 
 function scan_dir($dir) {
-  $ignored = array('.', '..', '.svn', '.htaccess');
+  $ignored = array('.', '..', '.svn', '.htaccess', '.gitignore');
 
   $files = array();
   foreach (scandir($dir) as $file) {
