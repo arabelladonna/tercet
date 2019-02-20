@@ -77,7 +77,7 @@ function buildFooter(html, metadata, page, commentsJson) {
 }
 
 function addCopyrightNotice() {
-  $(".main").append("<p class='footerText' id='copyrightNotice'>Copyright " + (new Date()).getFullYear() + " " + adminName + " | <a href='mailto:" + adminEmail + "'>Email me</a>");
+  $(".footer").append("<p class='footerText' id='copyrightNotice'>Copyright " + (new Date()).getFullYear() + " " + adminName + " | <a href='mailto:" + adminEmail + "'>Email me</a>");
 }
 
 function buildPostPreview(content, metadata, file) {
