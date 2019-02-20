@@ -7,4 +7,6 @@ last-updated: February 19th, 2019
 
 # About Me
 
-This is some info about me.
+Welcome to the Tercet Sample Blog! You can grab a copy of the Tercet blogging software on [Github](https://github.com/mattchuranu/tercet).
+
+To find more of my projects, head over to [mattchuranu.xyz](https://mattchuranu.xyz).
