@@ -28,10 +28,10 @@ Posts that are in /blog are automatically listed on the homepage. Posts that are
 
 You can set several settings using the /res/settings.md file.
 
-**Root URL** - you must set your root URL to the folder that index.php resides in.
-**Favicon** - can be either "on" or "off". File must be named "favicon.png".
-**Header image** - can be either "off" or a file type. File must be named "headerimg.<file type>".
-**Post preview text length** - the length of each of the post previews shown on the homepage. Please note that, at this time, uploading a file that has main content (h1 and img elements are automatically removed from the preview text) that is shorter than the length specified will break your blog.
+- **Root URL** - you must set your root URL to the folder that index.php resides in.
+- **Favicon** - can be either "on" or "off". File must be named "favicon.png".
+- **Header image** - can be either "off" or a file type. File must be named "headerimg.<file type>".
+- **Post preview text length** - the length of each of the post previews shown on the homepage.
 
 The copyright notice and "Email me" hyperlink, as well as an email hyperlink that shows up during certain errors, are set automatically using the the **admin name** and **admin email** data specified in the settings file.
 
