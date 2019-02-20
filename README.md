@@ -37,10 +37,8 @@ The copyright notice and "Email me" hyperlink, as well as an email hyperlink tha
 
 ## Known issues
 
-This has only been in development since February 18th, so it has a few issues.
+This has only been in development since February 18th, so it has a few issue.
 
-- The aforementioned issue with post preview text length.
-- Posts are in order of most recently updated, rather than most recently created. This is a Linux limitation and I am currently trying to come up with a user-friendly solution that doesn't involve writing an interface for writing posts.
-- Comments aren't in chronological order. I am planning to fix that.
+- Posts are in order of most recently updated, rather than most recently created. This is a Unix limitation and I am currently trying to come up with a user-friendly solution that doesn't involve writing an interface for writing posts.
 
 If you have any questions or run into problems, email me at matt@mattchuranu.xyz.

@@ -99,10 +99,14 @@ function trimPreview(str, len) {
   editor.find("img").remove();
   var newHtml = editor.html();
 
+  if (newHtml.length < postPreviewTextLength) {
+    maxLength = newHtml.length;
+  }
+
   var trimmedString = newHtml.substr(0, maxLength);
   trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))) + "...";
 
-  return trimmedString;
+  return (maxLength < newHtml.length ? trimmedString : newHtml);
 }
 
 function processMd(md) {
