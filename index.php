@@ -34,7 +34,14 @@
           $("#favicon").attr("href","img/favicon.png");
         }
 
-        buildMenu();
+        var settingsMd = <?php echo json_encode(file_get_contents('res/menu.md')); ?>;
+        var procSettingsMd = processMd(settingsMd);
+
+        var regex = /homelink/gi;
+        procSettingsMd[0] = procSettingsMd[0].replace(regex, rootUrl);
+
+        $('#menu').html(procSettingsMd[0]);
+
         updateBody(page, postPos);
         addCopyrightNotice();
       });

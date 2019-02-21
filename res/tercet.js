@@ -6,8 +6,6 @@ var adminName = "";
 var adminEmail = "";
 var postPreviewTextLength = 0;
 
-var menu = [ { "name": "Home", "link": "" }, { "name": "About", "link": "pages/about.md" } ];
-
 function settingsSetup(md) {
   var mdArr = processMd(md);
 
@@ -18,26 +16,6 @@ function settingsSetup(md) {
   adminName = mdArr[1]["admin-name"];
   adminEmail = mdArr[1]["admin-email"];
   postPreviewTextLength = mdArr[1]["post-preview-text-length"];
-}
-
-function buildMenu() {
-  var menuString = "";
-
-  for (var i = 0; i < menu.length; i++) {
-    var obj = menu[i];
-
-    if (i == 0) {
-      menuString = menuString + "<a class='clickable' href='" + rootUrl + "'>" + obj["name"] + "</li>";
-    } else {
-      menuString = menuString + "<a class='clickable' href='?page=" + obj["link"] + "'>" + obj["name"] + "</li>";
-    }
-
-    if (i < menu.length - 1) {
-      menuString = menuString + " ";
-    }
-  }
-
-  $('#menu').html(menuString);
 }
 
 function buildFooter(html, metadata, page, commentsJson) {
