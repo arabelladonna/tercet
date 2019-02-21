@@ -34,7 +34,6 @@
           $("#favicon").attr("href","img/favicon.png");
         }
 
-        var settingsMd = <?php echo json_encode(file_get_contents('res/menu.md')); ?>;
         var procSettingsMd = processMd(settingsMd);
 
         var regex = /homelink/gi;

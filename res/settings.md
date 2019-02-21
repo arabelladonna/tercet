@@ -7,3 +7,5 @@ admin-name: Matt Chelen
 admin-email: mattchelen@gmail.com
 post-preview-text-length: 100
 ---
+
+[Home](homelink) [About](?page=pages/about.md)

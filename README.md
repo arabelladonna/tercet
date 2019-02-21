@@ -35,7 +35,7 @@ You can set several settings using the /res/settings.md file.
 
 The copyright notice and "Email me" hyperlink, as well as an email hyperlink that shows up during certain errors, are set automatically using the the **admin name** and **admin email** data specified in the settings file.
 
-The main menu is automatically built from /res/menu.md file. You can add any links that you want (and as many links as you want). You can also rename the Home link, if you'd like. The "homelink" keyword that is used by default is automatically replaced with the _root-url_ that is set in /res/settings.md, but can be replaced if you so choose.
+The main menu is automatically built from any content that is outside of the metadata. You can add any links that you want (and as many links as you want). You can also rename the Home link, if you'd like. The "homelink" keyword that is used by default is automatically replaced with the _root-url_ that is set in /res/settings.md, but can be replaced if you so choose.
 
 ## Known issues
 
