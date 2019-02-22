@@ -10,11 +10,22 @@
       $dir = implode('/', explode('/', $path, -1));
       $folder = explode("/", $path)[2];
 
+      $dirExists = true;
+
+      for ($i = -3; $i <= 0; $i++) {
+        $currentDir = implode('/', explode('/', $path, $i));
+
+        $currentDir = '../' . $currentDir;
+
+        if (!is_dir($currentDir)) {
+          $dirExists = false;
+          mkdir($currentDir, 0755);
+        }
+      }
+
       chdir('../' . $dir);
 
-      if (!is_dir($folder)) {
-        mkdir($folder, 0755);
-      } else {
+      if ($dirExists) {
         $num = findNextCommentNumber($folder);
       }
 
@@ -37,7 +48,7 @@
       fwrite($file, $cmtTxt);
 
       header('Location: ' . $_SERVER['HTTP_REFERER']);
-      exit;
+      //exit;
     }
   }
 

@@ -39,10 +39,8 @@ The copyright notice and "Email me" hyperlink, as well as an email hyperlink tha
 
 The main menu is automatically built from any content that is outside of the metadata. You can add any links that you want (and as many links as you want). You can also rename the Home link, if you'd like. The "homelink" keyword that is used by default is automatically replaced with the _root-url_ that is set in /res/settings.md, but can be replaced if you so choose.
 
-## Known issues
+#New categories and comments
 
-This has only been in development since February 18th, so it has a few issues.
+If it does not already exist, the structure of the comments folder is automatically built when the first comment on a post is submitted. By default, "blog" and "pages" are the only post categories that are available, but, due to the fact that the structure of the comments folder is handled by the blog software, you can easily add other categories by creating new folders, putting posts in those folders, and linking to them without needing to worry about whether the comments system will work.
 
-- You currently have to keep the /comments folder structure intact or it will break your blog.
-
-If you have any questions or run into problems, email me at matt@mattchuranu.xyz.
+If you have any questions or run into any problems, email me at matt@mattchuranu.xyz.

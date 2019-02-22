@@ -46,6 +46,8 @@ function buildFooter(html, metadata, page, commentsJson) {
           html = html + "<hr>";
         }
       }
+    } else {
+      html = html + "<div class='comment'>" + commentsJson + "</div>";
     }
   }
 
