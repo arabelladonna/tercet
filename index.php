@@ -67,14 +67,28 @@
           var blogJson = <?php echo get_files("blog"); ?>;
           var homeHtml = "";
 
-          for (var i = n; i < n + 5; i++) {
-            if (i >= blogJson.length) break;
-
+          var mdArr = new Array(blogJson.length);
+          for (var i = 0; i < blogJson.length; i++) {
             var obj = blogJson[i];
 
             var pMd = processMd(obj["content"]);
 
-            homeHtml = homeHtml + buildPostPreview(pMd[0], pMd[1], obj["file"]);
+            mdArr[i] = new Array(4);
+
+            mdArr[i][0] = parseInt(pMd[1]["post-number"]);
+            mdArr[i][1] = pMd[0];
+            mdArr[i][2] = pMd[1];
+            mdArr[i][3] = obj["file"];
+          }
+
+          mdArr = mdArr.sort(function(a,b) {
+            return a[0] - b[0];
+          }).reverse();
+
+          for (var i = n; i < n + 5; i++) {
+            if (i >= blogJson.length) break;
+
+            homeHtml = homeHtml + buildPostPreview(mdArr[i][1], mdArr[i][2], mdArr[i][3]);
             if (i < n + 4 && i < blogJson.length - 1) {
               homeHtml = homeHtml + "<hr>"
             }

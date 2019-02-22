@@ -15,14 +15,16 @@ To post content, simply upload Markdown files to the /blog and /pages folders. T
 title: Test Post
 author: Matt Chelen
 date: February 18th, 2019
-last-updated: February 19th, 2019
-comments: yes
+last-updated: February 21st, 2019
+post-number: 1
 ---
 ```
 
 The _last-updated_ and _comments_ metadata options are optional. If last-updated does not exist, it simply will not show a last updated date. If _comments_ is set to anything other than "yes" or otherwise does not exist, comments will not be available for that post.
 
 Posts that are in /blog are automatically listed on the homepage. Posts that are in /pages have to be manually linked to.
+
+Post order is enforced using the _post-number_ metadata option. Posts are listed in reverse order, meaning that the post with the highest _post-number_ metadata will be shown first.
 
 ## Settings
 
