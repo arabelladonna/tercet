@@ -41,9 +41,8 @@ The main menu is automatically built from any content that is outside of the met
 
 ## Known issues
 
-This has only been in development since February 18th, so it has a few issue.
+This has only been in development since February 18th, so it has a few issues.
 
-- Posts are in order of most recently updated, rather than most recently created. This is a Unix limitation and I am currently trying to come up with a user-friendly solution that doesn't involve writing an interface for writing posts.
 - You currently have to keep the /comments folder structure intact or it will break your blog.
 
 If you have any questions or run into problems, email me at matt@mattchuranu.xyz.
