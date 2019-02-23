@@ -7,7 +7,7 @@ function get_files($path) {
     $jsonString = "[ ";
 
     foreach($files as $f) {
-      $jsonString .= '{ "file": "' . $path . '/' . $f . '", "content": ' . json_encode(file_get_contents($path . '/' . $f)) . ' }, ';
+      $jsonString .= '{ "file": "' . explode('/', $path)[1] . '/' . $f . '", "content": ' . json_encode(file_get_contents($path . '/' . $f)) . ' }, ';
     }
 
     $jsonString = substr($jsonString, 0 , -2) . " ]";

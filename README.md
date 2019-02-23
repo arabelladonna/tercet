@@ -8,7 +8,7 @@ You can find a working sample website [here](http://mattchuranu.xyz/tercet/).
 
 Using Tercet is simple. It doesn't require a database or any external resources. As long as you have a webserver that runs PHP, you can run Tercet.
 
-To post content, simply upload Markdown files to the /blog and /pages folders. The following metadata is recommended:
+To post content, simply upload Markdown files to the /content/blog and /content/pages folders. The following metadata is recommended:
 
 ```Markdown
 ---
@@ -22,7 +22,7 @@ post-number: 1
 
 The _last-updated_ and _comments_ metadata options are optional. If last-updated does not exist, it simply will not show a last updated date. If _comments_ is set to anything other than "yes" or otherwise does not exist, comments will not be available for that post.
 
-Posts that are in /blog are automatically listed on the homepage. Posts that are in /pages have to be manually linked to.
+Posts that are in /content/blog are automatically listed on the homepage. Posts that are in /pages have to be manually linked to.
 
 Post order is enforced using the _post-number_ metadata option. Posts are listed in reverse order, meaning that the post with the highest _post-number_ metadata will be shown first.
 

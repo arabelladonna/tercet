@@ -25,13 +25,13 @@
         settingsSetup(settingsMd);
 
         if (headerImage !== "off") {
-          $('#title').html("<img src='img/headerimg." + headerImage + "' /><br />" + blogTitle);
+          $('#title').html("<img src='content/img/headerimg." + headerImage + "' /><br />" + blogTitle);
         } else {
           $('#title').html(blogTitle);
         }
 
         if (favicon === "on") {
-          $("#favicon").attr("href","img/favicon.png");
+          $("#favicon").attr("href","content/img/favicon.png");
         }
 
         var procSettingsMd = processMd(settingsMd);
@@ -55,7 +55,7 @@
         showdown.setFlavor('original');
 
         if (f) {
-          var md = <?php echo json_encode(file_get_contents($_GET['page'])); ?>;
+          var md = <?php echo json_encode(file_get_contents("content/" . $_GET['page'])); ?>;
 
           var procMd = processMd(md);
 
@@ -64,7 +64,7 @@
           buildFooter(procMd[0], procMd[1], page, commentsJson);
         } else {
 
-          var blogJson = <?php echo get_files("blog"); ?>;
+          var blogJson = <?php echo get_files("content/blog"); ?>;
           var homeHtml = "";
 
           var mdArr = new Array(blogJson.length);
