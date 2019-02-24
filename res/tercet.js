@@ -48,7 +48,7 @@ function buildFooter(html, metadata, page, commentsJson) {
         html = html + "<div class='comment' id='" + commentNumber + "'><p class='commentTitle'><b>" + pMd[1]["author"] + "</b><br /><span class='footerText'>" + pMd[1]["date"] + "</span><br /><span class='footerText'>#" + commentNumber + "</span></p>";
 
         if (pMd[1]["reply-to"]) {
-          html = html + "<a class='footerText' onclick='highlightComment(" + pMd[1]["reply-to"] + ")' href='#" + pMd[1]["reply-to"] + "'>> #" + pMd[1]["reply-to"] + "</a>";
+          html = html + "<a class='footerText' id='replyto#' " + commentNumber + " onclick='highlightComment(" + pMd[1]["reply-to"] + ");' href='#" + pMd[1]["reply-to"] + "'>> #" + pMd[1]["reply-to"] + "</a>";
         }
 
         html = html + "<p class='commentText'>" + pMd[0] + "</p>";
@@ -105,10 +105,18 @@ function replyToComment(num) {
 }
 
 function highlightComment(num) {
-  var commentStr = '#' + num
-  if ($(commentStr).length) {
-    $(commentStr).effect("highlight", { color: 'blue' } , 300);
-  }
+  $('#' + num.toString()).queue(function (next) {
+    $('#' + num.toString()).css("outline", "1px solid #5d5d5d");
+    next();
+  }).delay(2400).queue(function (next) {
+    $('#' + num.toString()).css("outline", "1px solid #ffffff");
+    next();
+  });
+
+  /*$('#' + num.toString()).css("transition", "1s").css("background-color", "#9f9f9f").css("color", "white").delay(1200).queue(function (next) {
+    $('#' + num.toString()).css("background-color", "white").css("color", "#5d5d5d");
+    next();
+  });*/
 }
 
 function trimPreview(str, len) {

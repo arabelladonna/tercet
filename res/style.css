@@ -36,6 +36,20 @@ button, .comment a {
   cursor: pointer;
 }
 
+.comment {
+  -webkit-transition: outline 1s ease-out;
+ -moz-transition: outline 1s ease-out;
+ -o-transition: outline 1s ease-out;
+ -ms-transition: outline 1s ease-out;
+ transition: outline 1s ease-out;
+ outline: 1px solid #ffffff;
+}
+
+/*.comment p, .comment a {
+  margin-left: 5px;
+  margin-right: 5px;
+}*/
+
 .menu a:link, .menu a:visited, .postPreview a:link, .postPreview a:visited, .footerText a:link, .footerText a:visited, .menu a:hover, .postPreview a:hover, .footerText a:hover {
 	text-decoration: none;
 }
