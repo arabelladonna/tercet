@@ -22,14 +22,18 @@ h2.postPreview {
   margin-bottom: 5px;
 }
 
-a:link, a:visited {
+a:link, a:visited, button {
   color: #5d5d5d;
   transition: color .3s;
 }
 
-a:hover {
+a:hover, button:hover {
   color: #9f9f9f;
   transition: color .3s;
+}
+
+button, .comment a {
+  cursor: pointer;
 }
 
 .menu a:link, .menu a:visited, .postPreview a:link, .postPreview a:visited, .footerText a:link, .footerText a:visited, .menu a:hover, .postPreview a:hover, .footerText a:hover {
@@ -42,6 +46,16 @@ a:hover {
 
 .postPreview a {
   font-size:18px;
+}
+
+.postPreviewImageContainer {
+  height: 100px;
+}
+
+.postPreviewFeaturedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .menu a {
@@ -61,6 +75,10 @@ div.main, .commentText {
 
 .footerText {
   font-size: 12px;
+}
+
+#replyText {
+  margin-top: 5px;
 }
 
 hr {

@@ -5,6 +5,7 @@ var favicon = "off";
 var adminName = "";
 var adminEmail = "";
 var postPreviewTextLength = 0;
+var postPreviewFeaturedImage = "off";
 
 function settingsSetup(md) {
   var mdArr = processMd(md);
@@ -16,6 +17,7 @@ function settingsSetup(md) {
   adminName = mdArr[1]["admin-name"];
   adminEmail = mdArr[1]["admin-email"];
   postPreviewTextLength = mdArr[1]["post-preview-text-length"];
+  postPreviewFeaturedImage = mdArr[1]["post-preview-featured-image"];
 }
 
 function buildFooter(html, metadata, page, commentsJson) {
@@ -40,8 +42,17 @@ function buildFooter(html, metadata, page, commentsJson) {
         var obj = commentsJson[i];
         var pMd = processMd(obj["content"]);
 
-        html = html + "<div class='comment'><p class='commentTitle'><b>" + pMd[1]["author"] + "</b><br /><span class='footerText'>" + pMd[1]["date"] + "</span></p>";
-        html = html + "<p class='commentText'>" + pMd[0] + "</p></div>";
+        var commentNumber = obj["file"].substr(0, obj["file"].lastIndexOf(".")).split("/");
+        commentNumber = commentNumber[commentNumber.length - 1];
+
+        html = html + "<div class='comment' id='" + commentNumber + "'><p class='commentTitle'><b>" + pMd[1]["author"] + "</b><br /><span class='footerText'>" + pMd[1]["date"] + "</span><br /><span class='footerText'>#" + commentNumber + "</span></p>";
+
+        if (pMd[1]["reply-to"]) {
+          html = html + "<a class='footerText' onclick='highlightComment(" + pMd[1]["reply-to"] + ")' href='#" + pMd[1]["reply-to"] + "'>> #" + pMd[1]["reply-to"] + "</a>";
+        }
+
+        html = html + "<p class='commentText'>" + pMd[0] + "</p>";
+        html = html + "<a class='footerText' onclick='replyToComment(" + commentNumber + ")'>Reply</a></div>";
         if (i < commentsJson.length - 1) {
           html = html + "<hr>";
         }
@@ -62,13 +73,42 @@ function addCopyrightNotice() {
 
 function buildPostPreview(content, metadata, file) {
   var postPreview = "<div class='postPreview'>";
+
+  if ((postPreviewFeaturedImage === "on") && (metadata["featured-image"] || headerImage !== "off")) {
+    postPreview = postPreview + "<div class='postPreviewImageContainer'><a href='?page=" + file + "'>";
+    if (metadata["featured-image"]) {
+      postPreview = postPreview + "<img src='" + metadata["featured-image"] + "' class='postPreviewFeaturedImage' />";
+    } else {
+      if (headerImage !== "off") {
+        postPreview = postPreview + "<img src='" + rootUrl + "/content/img/headerimg." + headerImage + "' class='postPreviewFeaturedImage' />";
+      }
+    }
+    postPreview = postPreview + "</a></div>";
+  }
+
   postPreview = postPreview + "<a href='?page=" + file + "'><h2 class='postTitle'>" + metadata["title"] + "</h2></a>";
   postPreview = postPreview + "<p class='postPreviewText'>" + trimPreview(content, postPreviewTextLength) + "</p>";
   postPreview = postPreview + "<p class='footerText'>";
   (metadata["author"] && metadata["date"]) ? postPreview = postPreview + metadata["author"] + " | " + metadata["date"] : metadata["author"] ? postPreview = postPreview + metadata["author"] : metadata["date"] ? postPreview = postPreview + metadata["date"] : postPreview;
-  postPreview = postPreview + "<p></p></div>";
+  postPreview = postPreview + "</p></p></div>";
 
   return postPreview;
+}
+
+function replyToComment(num) {
+  if ($('#rply').length) {
+    $('#rply').val(num);
+    $('#replyText').html("Replying to comment #" + num + ".");
+  } else {
+    $('#cmnt').after("<input type='hidden' id='rply' name='reply_to' value='" + num + "' /><span id='replyText' class='footerText'>Replying to comment #" + num + ".</span>");
+  }
+}
+
+function highlightComment(num) {
+  var commentStr = '#' + num
+  if ($(commentStr).length) {
+    $(commentStr).effect("highlight", { color: 'blue' } , 300);
+  }
 }
 
 function trimPreview(str, len) {
@@ -83,10 +123,16 @@ function trimPreview(str, len) {
     maxLength = newHtml.length;
   }
 
-  var trimmedString = newHtml.substr(0, maxLength);
-  trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))) + "...";
+  var trimmedString = trimString(newHtml, maxLength) + "...";
 
   return (maxLength < newHtml.length ? trimmedString : newHtml);
+}
+
+function trimString(str, len) {
+  var trimmedString = str.substr(0, len);
+  trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+
+  return (len < str.length ? trimmedString : str);
 }
 
 function processMd(md) {

@@ -2,6 +2,7 @@
 
   <head>
     <title>Tercet Sample Blog</title>
+
     <script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="lib/showdown.min.js"></script>
     <script type="text/javascript" src="res/tercet.js"></script>

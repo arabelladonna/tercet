@@ -31,10 +31,14 @@
 
       $cmtTxt = "";
 
-      if(isset($_POST['user_name'])) {
+      if(strlen($_POST['user_name'])) {
         $cmtTxt .= "---\r\nauthor: " . $_POST['user_name'];
       } else {
         $cmtTxt .= "---\r\nauthor: Anonymous";
+      }
+
+      if(isset($_POST['reply_to'])) {
+        $cmtTxt .= "\r\nreply-to: " . $_POST['reply_to'];
       }
 
       $cmtTxt .= "\r\ndate: " . date("F j, Y, g:i a") . "\r\n---\r\n\r\n";

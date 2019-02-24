@@ -17,10 +17,13 @@ author: Matt Chelen
 date: February 18th, 2019
 last-updated: February 21st, 2019
 post-number: 1
+featured-image: https://i2.wp.com/mattchuranu.xyz/wp-content/uploads/2018/07/mattchuranu.xyz-logo-full.png
 ---
 ```
 
-The _last-updated_ and _comments_ metadata options are optional. If last-updated does not exist, it simply will not show a last updated date. If _comments_ is set to anything other than "yes" or otherwise does not exist, comments will not be available for that post.
+The _last-updated_, _comments_, and _featured-image_ metadata options are optional. If _last-updated_ does not exist, it simply will not show a last updated date. If _comments_ is set to anything other than "yes" or otherwise does not exist, comments will not be available for that post.
+
+The _featured-image_ option is used to set a unique featured image for the post in question, This image will only be shown if post preview featured images are turned on in the settings. If featured images are turned on and the _featured-image_ option is not set, the blog software will automatically user your header image instead. If your header image is turned off and there is no featured image set, it will automatically decide for you that no image should be shown for that post. By default, featured images are shown above the post preview text. However, this can easily be changed with a bit of CSS editing.
 
 Posts that are in /content/blog are automatically listed on the homepage. Posts that are in /pages have to be manually linked to.
 
@@ -34,6 +37,7 @@ You can set several settings using the /res/settings.md file.
 - **Favicon** - can be either "on" or "off". File must be named "favicon.png".
 - **Header image** - can be either "off" or a file type. File must be named "headerimg.<file type>".
 - **Post preview text length** - the length of each of the post previews shown on the homepage.
+- **Post preview featured image** - whether or not a featured image is shown for each post on the homepage.
 
 The copyright notice and "Email me" hyperlink, as well as an email hyperlink that shows up during certain errors, are set automatically using the the **admin name** and **admin email** data specified in the settings file.
 
