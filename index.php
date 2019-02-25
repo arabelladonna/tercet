@@ -64,6 +64,7 @@
 
           buildFooter(procMd[0], procMd[1], page, commentsJson);
         } else {
+          document.title = blogTitle;
 
           var blogJson = <?php echo get_files("content/blog"); ?>;
           var homeHtml = "";
