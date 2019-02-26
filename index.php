@@ -26,7 +26,12 @@
         settingsSetup(settingsMd);
 
         if (headerImage !== "off") {
-          $('#title').html("<img src='content/img/headerimg." + headerImage + "' /><br />" + blogTitle);
+          $('#title').html(
+            "<img src='content/img/headerimg." +
+            headerImage +
+            "' /><br />" +
+            blogTitle
+          );
         } else {
           $('#title').html(blogTitle);
         }
@@ -106,7 +111,11 @@
                 num = 0;
               }
 
-              homeHtml = homeHtml + "<span class='navButton'><a href='?num=" + num + "'>Newer</a></span>";
+              homeHtml =
+                homeHtml +
+                "<span class='navButton'><a href='?num=" +
+                num +
+                "'>Newer</a></span>";
             }
 
             if (n > 0 && n + 5 < blogJson.length) {
@@ -119,7 +128,11 @@
               if (num >= blogJson.length) {
                 num = blogJson.length - 5;
               }
-              homeHtml = homeHtml + "<span class='navButton'><a href='?num=" + num + "'>Older</a></span>";
+              homeHtml =
+                homeHtml +
+                "<span class='navButton'><a href='?num=" +
+                num +
+                "'>Older</a></span>";
             }
 
             homeHtml = homeHtml + "</p>";
