@@ -2,7 +2,7 @@
 
 A bare minimum blogging platform utilizing Markdown for basically everything.
 
-You can find a working sample website [here](http://mattchuranu.xyz/tercet/).
+You can find a working sample website [here]() (temporarily offline).
 
 ## Usage
 
@@ -13,11 +13,11 @@ To post content, simply upload Markdown files to the /content/blog and /content/
 ```Markdown
 ---
 title: Test Post
-author: Matt Chelen
+author: Plucky Porcupine
 date: February 18th, 2019
 last-updated: February 21st, 2019
 post-number: 1
-featured-image: https://i2.wp.com/mattchuranu.xyz/wp-content/uploads/2018/07/mattchuranu.xyz-logo-full.png
+featured-image: https://pluckyporcupinegame.boutique/logo.png
 ---
 ```
 
@@ -47,4 +47,4 @@ The main menu is automatically built from any content that is outside of the met
 
 If it does not already exist, the structure of the comments folder is automatically built when the first comment on a post is submitted. By default, "blog" and "pages" are the only post categories that are available, but, due to the fact that the structure of the comments folder is handled by the blog software, you can easily add other categories by creating new folders, putting posts in those folders, and linking to them without needing to worry about whether the comments system will work.
 
-If you have any questions or run into any problems, email me at matt@mattchuranu.xyz.
+If you have any questions or run into any problems, email me at contact@pluckyporcupinegame.boutique.
