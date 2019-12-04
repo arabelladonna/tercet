@@ -47,4 +47,4 @@ The main menu is automatically built from any content that is outside of the met
 
 If it does not already exist, the structure of the comments folder is automatically built when the first comment on a post is submitted. By default, "blog" and "pages" are the only post categories that are available, but, due to the fact that the structure of the comments folder is handled by the blog software, you can easily add other categories by creating new folders, putting posts in those folders, and linking to them without needing to worry about whether the comments system will work.
 
-If you have any questions or run into any problems, email me at contact@pluckyporcupinegame.boutique.
+If you have any questions or run into any problems, email me at pluckyporcupinegb@gmail.com.
