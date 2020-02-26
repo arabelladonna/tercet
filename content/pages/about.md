@@ -1,6 +1,6 @@
 ---
 title: About Me
-author: Matt Chelen
+author: Plucky Porcupine
 date: February 18th, 2019
 last-updated: February 19th, 2019
 ---
