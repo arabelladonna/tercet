@@ -1,10 +1,10 @@
 ---
-root-url: https://mattchuranu.xyz/tercet
+root-url: https://pluckyporcupinegame.boutique/tercet
 blog-title: Tercet Sample Blog
 header-image: off
 favicon: off
-admin-name: Matt Chelen
-admin-email: mattchelen@gmail.com
+admin-name: Plucky Porcupine
+admin-email: pluckyporcupinegb@gmail.com
 post-preview-text-length: 100
 post-preview-featured-image: off
 ---
